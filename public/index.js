@@ -6,7 +6,7 @@ document.querySelector("#loginForm").addEventListener("submit",async(event)=>{
     formObject["username"] = form.username.value;
     formObject["password"] = form.password.value;
 
-    const res = await fetch("/login",{
+    const res = await fetch("/user/login",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -15,7 +15,7 @@ document.querySelector("#loginForm").addEventListener("submit",async(event)=>{
     });
     const result = await res.json();
     if (result.success){
-        window.location = '/gameRoom';
+        window.location = '/game';
     }else{
         alert(`${result.message}`);
     }

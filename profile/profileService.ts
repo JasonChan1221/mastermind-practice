@@ -1,5 +1,5 @@
-import {client} from './app';
-import {checkPassword,hashPassword} from './hash';
+import {client} from '../app';
+import {checkPassword,hashPassword} from '../hash';
 
 export class ProfileService{
     constructor(){};

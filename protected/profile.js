@@ -1,6 +1,3 @@
-
-
-
 document.querySelector("#uploadPic").addEventListener("submit",async(event)=>{
     event.preventDefault();
     const form = event.target;
@@ -8,7 +5,7 @@ document.querySelector("#uploadPic").addEventListener("submit",async(event)=>{
 
     formData.append("image",form.image.files[0]);
 
- const res = await fetch(`/profilePic`,{
+ const res = await fetch(`/profile/profilePic`,{
         method:"PUT",
         body:formData
     });
@@ -23,7 +20,7 @@ document.querySelector("#uploadPic").addEventListener("submit",async(event)=>{
 
 async function deletePic()
 {
-    const res = await fetch(`/deletePic`,{
+    const res = await fetch(`/profile/deletePic`,{
         method:"DELETE"
     });
     const result = await res.json();
@@ -43,7 +40,7 @@ async function deletePic()
 
 async function deleteHistory()
 {
-    const res = await fetch(`/histroiesList`, {
+    const res = await fetch(`/profile/histroiesList`, {
         method: "DELETE"
     });
 
@@ -64,7 +61,7 @@ async function deleteHistory()
 
 
 async function loadProfileInfo(){
-     const res = await fetch("/profileInfo");
+     const res = await fetch("/profile/profileInfo");
  const profile = await res.json();
  pictureName = profile[0]["profile_pic"];
  profileName = profile[0]["username"];
@@ -76,7 +73,7 @@ async function loadProfileInfo(){
 
 async function loadHistoryTable()
 {
-    const res = await fetch("/histroiesList");
+    const res = await fetch("/profile/histroiesList");
     const table = await res.json();
     counter = table.length;
     
@@ -153,7 +150,7 @@ async function changeUsername()
     
         formObject["password"] = form.password.value;
     
-     const res = await fetch(`/confirmPassword`,{
+     const res = await fetch(`/profile/confirmPassword`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -190,7 +187,7 @@ document.querySelector('#updateUsernameForm').addEventListener('submit',async(ev
     formObject["newUsername"] = form.newUsername.value;
    
   
-        const res= await fetch("/changeUsername",{
+        const res= await fetch("/profile/changeUsername",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json"
@@ -226,7 +223,7 @@ async function changePassword()
     
         formObject["password"] = form.password.value;
     
-     const res = await fetch(`/confirmPassword`,{
+     const res = await fetch(`/profile/confirmPassword`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -263,7 +260,7 @@ document.querySelector('#updatePasswordForm').addEventListener('submit',async(ev
     formObject["conPassword"] = form.conPassword.value;
    
  
-        const res= await fetch("/changePassword",{
+        const res= await fetch("/profile/changePassword",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json"

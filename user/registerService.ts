@@ -1,5 +1,5 @@
-import {client} from './app';
-import {hashPassword} from './hash';
+import {client} from '../app';
+import {hashPassword} from '../hash';
 
 export class RegisterService{
     constructor(){}

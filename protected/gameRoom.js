@@ -36,7 +36,7 @@ startBtn.addEventListener('click',()=>{
         formObject["pickFour"] = form.pickFour.value;
         formObject['round'] = round;
         formObject['gameId'] = gameId;
-        const res = await fetch("/selection", {
+        const res = await fetch("/game/selection", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -65,7 +65,7 @@ async function startGame(){
 async function winGame(){
     guessBtn.style.visibility='hidden';
     alert('You catch the answer!')
-    const res = await fetch('/win',{
+    const res = await fetch('/game/win',{
         method:"PUT",
         headers:{
             "Content-Type":"application/json"
@@ -110,7 +110,7 @@ function restartGame(){
 
 //show user pick which color and correctPos
 async function showColorHistory(){
-    const res= await fetch(`/color`);
+    const res= await fetch(`/game/color`);
     const result= await res.json();
     const colorSet = result.colorname.split(',');
     const correct = result.correct;
@@ -146,7 +146,7 @@ async function createGame(){
     for(let i =0; i<4;i++){
         answer[i]=color[Math.floor(Math.random()*6)];
     }
-    const res = await fetch('/game',{
+    const res = await fetch('/game/start',{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -161,7 +161,7 @@ async function createGame(){
 
 //show color chance
 async function colorOfChance(){
-    const res = await fetch('/chance');
+    const res = await fetch('/game/chance');
     const result = await res.json();
     const chance = result.colorchance;
     console.log(chance);
@@ -172,7 +172,7 @@ async function colorOfChance(){
 
 //get user info
 async function getUser(){
-    const result = await fetch('/user');
+    const result = await fetch('/game/user');
     const user = await result.json();
     userId= user.id;
     userName = user.username;

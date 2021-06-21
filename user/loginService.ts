@@ -1,5 +1,5 @@
-import {client} from './app';
-import {checkPassword} from './hash';
+import {client} from '../app';
+import {checkPassword} from '../hash';
 export class LoginService{
     constructor(){}
     login = async(username:string,password:string)=>{

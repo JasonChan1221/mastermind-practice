@@ -2,9 +2,6 @@ import {Request,Response} from 'express';
 import {profileService} from './profileService';
 import path from 'path';
 
-
-
-
 export class ProfileController{
     constructor(){};
 

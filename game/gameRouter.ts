@@ -1,8 +1,7 @@
 import express, {Request,Response} from 'express';
-import {client} from './app';
-import {checkCorrect} from './calculate';
+import {client} from '../app';
+import {colorChance,initChance,checkCorrect} from './calculate';
 import {randomPick} from './randomPick';
-import {colorChance,initChance} from './calculate';
 
 export const gameRouter  = express.Router();
 
@@ -68,7 +67,7 @@ gameRouter.get('/color' ,async(req:Request,res:Response)=>{
 })
 
 //insert the answer to db and return the game id
-gameRouter.post('/game',async(req:Request,res:Response)=>{
+gameRouter.post('/start',async(req:Request,res:Response)=>{
     chanceSet = initChance();
     const gameIdRow= await client.raw(`Insert into game (answer,created_at,winner_id,winlose) VALUES ('${req.body.ans}',CURRENT_TIMESTAMP,${parseInt(req.session['user'].id)},false) returning id`);
     res.json({success:true,gameid:gameIdRow.rows[0].id});

@@ -6,7 +6,7 @@ document.querySelector('#registerForm').addEventListener('submit',async(event)=>
     formObject['username'] = form.username.value;
     formObject['password']=form.password.value;
     formObject['conPassword']=form.conPassword.value;
-        const res=await fetch("/register",{
+        const res=await fetch("/user/register",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
