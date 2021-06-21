@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Room</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="gameRoom.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="row" >
+            <div class="col-md-12"  id="header">
+                <div class="profile">
+                    <a href="/profile">
+                        <img id="pic" alt="user">
+                    </a>
+                    <span id ="username"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="middle">
+            <div class="col-md-6" id="midLeft">
+                <div class="roundPlayer">
+                    <span id="roundCount">Round ---</span>
+                </div>
+                <div class="player">
+                    <div class="pickColor">
+                        <form id="colorForm" action="/selection" method="POST" >
+                            <div class="color">
+                                <label>#1</label>
+                                <input type="radio" id="red" value="red" name="pickOne">
+                                <input type="radio" id="blue" value="blue" name="pickOne">
+                                <input type="radio" id="pink" value="pink" name="pickOne">
+                                <input type="radio" id="yellow" value="yellow" name="pickOne">
+                                <input type="radio" id="green" value="green" name="pickOne">
+                                <input type="radio" id="orange" value="orange" name="pickOne">
+                            </div>
+                            <div class="color">
+                                <label>#2</label>
+                                <input type="radio" id="red" value="red" name="pickTwo">
+                                <input type="radio" id="blue" value="blue" name="pickTwo">
+                                <input type="radio" id="pink" value="pink" name="pickTwo">
+                                <input type="radio" id="yellow" value="yellow" name="pickTwo">
+                                <input type="radio" id="green" value="green" name="pickTwo">
+                                <input type="radio" id="orange" value="orange" name="pickTwo">
+                            </div>
+                            <div class="color"><label>#3</label>
+                                <input type="radio" id="red" value="red" name="pickThree">
+                                <input type="radio" id="blue" value="blue" name="pickThree">
+                                <input type="radio" id="pink" value="pink" name="pickThree">
+                                <input type="radio" id="yellow" value="yellow" name="pickThree">
+                                <input type="radio" id="green" value="green" name="pickThree">
+                                <input type="radio" id="orange" value="orange" name="pickThree">
+                            </div>
+                            <div class="color"><label>#4</label>
+                                <input type="radio" id="red" value="red" name="pickFour">
+                                <input type="radio" id="blue" value="blue" name="pickFour">
+                                <input type="radio" id="pink" value="pink" name="pickFour">
+                                <input type="radio" id="yellow" value="yellow" name="pickFour">
+                                <input type="radio" id="green" value="green" name="pickFour">
+                                <input type="radio" id="orange" value="orange" name="pickFour">
+                            </div>
+                                <input type="submit" id="guessBtn" value="I guess this">
+                        </form>
+                    </div>
+                </div>
+                <div class="PC">
+                    <div class="pcColor">
+                       <label>PC Picked</label>
+                    </div>
+                    <div class="pcPick">
+                        <span>
+                            <i class="bi bi-square-fill"></i>
+                           </span>
+                           <span>
+                            <i class="bi bi-square-fill"></i>
+                        </span>
+                        <span>
+                            <i class="bi bi-square-fill"></i>
+                        </span>
+                        <span>
+                            <i class="bi bi-square-fill"></i>
+                        </span>
+                    </div>
+                </div>  
+                <div class="answer">
+                    <span>Answer</span>
+                    <div class="answerColor">
+                        <i class="bi bi-square-fill"></i>
+                        <i class="bi bi-square-fill"></i>
+                        <i class="bi bi-square-fill"></i>
+                        <i class="bi bi-square-fill"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="gameHistory">
+                    <label>Game History</label>
+                    <div class="history">
+                        <div class="historyContent">
+                            <span id ="round"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="footer">
+            <div class="col-md-12"  id="footerContent">
+                <div class="colorChance">
+                    <div class="color" id="colorRed">
+                        <i class="bi bi-square-fill"></i>
+                        <span class="chance"></span>
+                    </div>
+                    <div class="color" id="colorBlue">
+                        <i class="bi bi-square-fill"></i>
+                        <span class="chance"></span>
+                    </div>
+                    <div class="color" id="colorPink">
+                        <i class="bi bi-square-fill"></i>
+                        <span class="chance"></span>
+                    </div>
+                    <div class="color" id="colorYellow">
+                        <i class="bi bi-square-fill"></i>
+                        <span class="chance"></span>
+                    </div>
+                    <div class="color" id="colorGreen">
+                        <i class="bi bi-square-fill"></i>
+                        <span class="chance"></span>
+                    </div>
+                    <div class="color" id="colorOrange">
+                        <i class="bi bi-square-fill"></i>
+                        <span class="chance"></span>
+                    </div>
+                </div>
+                <div class="start">
+                    <button class="startBtn" id="startBtn">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="gameRoom.js"></script>
+</body>
+</html>

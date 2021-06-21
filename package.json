@@ -1,0 +1,35 @@
+{
+  "name": "erb-exercises-mastermindpj2-gp3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@gitlab.com:fakeacone1/erb-exercises-mastermindpj2-gp3.git",
+  "author": "JasonChan <fakeacone1@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/body-parser": "^1.19.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.12",
+    "@types/express-session": "^1.17.3",
+    "@types/knex": "^0.16.1",
+    "@types/multer": "^1.4.5",
+    "@types/node": "^15.12.2",
+    "@types/pg": "^8.6.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "knex": "^0.95.6",
+    "multer": "^1.4.2",
+    "pg": "^8.6.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/puppeteer": "^5.4.3",
+    "jest": "^27.0.4",
+    "puppeteer": "^10.0.0"
+  }
+}

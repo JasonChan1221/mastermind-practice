@@ -1,0 +1,179 @@
+.mainContainer{
+    margin:20px;
+}
+#header{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.profile{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#middle{
+    margin-top: 15px;
+    border: 2px solid;
+}
+#midLeft{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px dashed grey;
+}
+.pickColor{
+    margin:10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pickColor form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pickColor span{
+    margin:10px;
+}
+.PC{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+.pcPick i{
+  margin: 5px;
+}
+.answer{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+.answer i {
+  margin:5px;
+}
+.gameHistory{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.history{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.historyContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#history{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+}
+#history i{
+  margin: 5px;
+}
+.color{
+    margin: 10px;
+}
+#red:empty{
+    background: red;
+    padding: 0.5em;
+    -webkit-appearance: none;
+  }
+#blue:empty{
+    background: blue;
+    padding: 0.5em;
+    -webkit-appearance: none;
+  }
+  #green:empty{
+    background: green;
+    padding: 0.5em;
+    -webkit-appearance: none;
+  }
+  #yellow:empty{
+    background: yellow;
+    padding: 0.5em;
+    -webkit-appearance: none;
+  }
+  #pink:empty{
+    background: pink;
+    padding: 0.5em;
+    -webkit-appearance: none;
+  }
+  #orange:empty{
+    background: orange;
+    padding: 0.5em;
+    -webkit-appearance: none;
+  }
+input[type=radio]:checked {
+    border: 1px solid black;
+}
+input[type=submit]{
+  background-color:rgb(26, 26, 161);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 8px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+#footerContent{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.colorChance{
+  display:flex;
+  flex-direction: row;
+}
+#colorRed i{
+  color: red;
+}
+#colorBlue i{
+  color:blue;
+}
+#colorYellow i{
+  color:Yellow;
+}
+#colorPink i{
+  color:pink;
+}
+#colorOrange i{
+  color:orange;
+}
+#colorGreen i{
+  color:green;
+}
+.startBtn{
+  background-color:rgb(26, 26, 161);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 8px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#pic{
+  object-fit:contain;
+  width:70px;
+  height:70px;
+  
+}
