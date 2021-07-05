@@ -7,7 +7,7 @@ async function openPrefer() {
     document.getElementById("backdrop").style.display = "block"
     document.getElementById("preferColor").style.display = "block"
     document.getElementById("preferColor").classList.add("show")
-    const res = await fetch('/preferColor');
+    const res = await fetch('profile/preferColor');
     const table  = await res.json();
     let count = table.length;
     for(let i =0;i<count;i++){
@@ -49,7 +49,7 @@ async function openHitRate(){
     document.getElementById("backdrop").style.display = "block"
     document.getElementById("hitRate").style.display = "block"
     document.getElementById("hitRate").classList.add("show")
-    const res = await fetch('/hitRate');
+    const res = await fetch('profile/hitRate');
     const table = await res.json();
     let count = table.length;
     let roundSet=[];
@@ -85,7 +85,7 @@ async function openPerformance() {
     document.getElementById("backdrop").style.display = "block"
     document.getElementById("performance").style.display = "block"
     document.getElementById("performance").classList.add("show")
-    const res = await fetch('/performance');
+    const res = await fetch('profile/performance');
     const table  = await res.json();
     let count = table.length;
     let countSet=[];//Lose,Win
